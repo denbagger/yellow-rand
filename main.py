@@ -2,15 +2,16 @@ import random
 import sys
 
 from PyQt6.QtGui import QPainter, QColor
+from UI import UI
 from random import randint
 from PyQt6.QtWidgets import QWidget, QApplication, QMainWindow
 from PyQt6 import uic
 
 
-class Example(QMainWindow):
+class Example(QMainWindow, UI):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.paint)
         self.do_paint = False
 
