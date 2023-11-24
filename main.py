@@ -3,9 +3,7 @@ import sys
 
 from PyQt6.QtGui import QPainter, QColor
 from UI import UI
-from random import randint
-from PyQt6.QtWidgets import QWidget, QApplication, QMainWindow
-from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication, QMainWindow
 
 
 class Example(QMainWindow, UI):
@@ -27,8 +25,8 @@ class Example(QMainWindow, UI):
         self.repaint()
 
     def draw_circle(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
-        a = random.randint(10, 400)
+        qp.setBrush(QColor(random.randint(0,255), random.randint(0,255), random.randint(0,255)))
+        a = random.randint(10, 300)
         qp.drawEllipse(125, 100, a, a)
 
 
